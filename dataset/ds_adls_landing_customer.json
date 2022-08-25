@@ -19,7 +19,10 @@
 					"value": "@dataset().landing_folder",
 					"type": "Expression"
 				},
-				"folderPath": "@dataset().landing_folder",
+				"folderPath": {
+					"value": "@dataset().landing_folder",
+					"type": "Expression"
+				},
 				"fileSystem": "input"
 			}
 		},
