@@ -1,6 +1,69 @@
 {
-	"name": "pl_ingest_s3",
+	"name": "pl_ingest_s3_to_adls",
 	"properties": {
+		"activities": [
+			{
+				"name": "Get Data From S3",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AmazonS3ReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_s3_gm_azurelib",
+						"type": "DatasetReference",
+						"parameters": {
+							"folderPath": {
+								"value": "@concat(formatDateTime(utcnow(),'yyyy/MM/dd'))",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_adls_landing_customer",
+						"type": "DatasetReference",
+						"parameters": {
+							"landing_folder": {
+								"value": "@concat('GM_Project/landing/',formatDateTime(utcnow(),'yyyy/MM/dd'))",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
 		"annotations": []
 	}
 }
