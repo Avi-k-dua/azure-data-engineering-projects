@@ -15,10 +15,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().landing_folder",
-					"type": "Expression"
-				},
 				"folderPath": {
 					"value": "@dataset().landing_folder",
 					"type": "Expression"
