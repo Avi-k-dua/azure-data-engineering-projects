@@ -1,0 +1,9 @@
+{
+	"name": "azurelib-gm-adf",
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "eb2e0cd5-f73d-4cf0-bcc3-7080bed2d72a",
+		"tenantId": "707c861d-6374-4af3-b74e-404192474f68"
+	}
+}
