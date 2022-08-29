@@ -1,0 +1,25 @@
+{
+	"name": "tr_schedule_gm_s3_get",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_s3_to_adls",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-08-29T15:18:00",
+				"endTime": "2022-08-31T15:18:00",
+				"timeZone": "Pacific Standard Time"
+			}
+		}
+	}
+}
