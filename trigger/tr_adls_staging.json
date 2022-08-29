@@ -14,6 +14,7 @@
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
 			"blobPathBeginsWith": "/input/blobs/GM_Project/staging/",
+			"blobPathEndsWith": ".json",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/a99520ae-ae45-4be4-9629-98fe3f487fc0/resourceGroups/azurelib-rg/providers/Microsoft.Storage/storageAccounts/azurelibdl",
 			"events": [
