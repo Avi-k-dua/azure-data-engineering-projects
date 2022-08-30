@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "azurelib-apm-adf"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://kv-gm-azurelib.vault.azure.net/"
+		},
+		"tr_storage_properties_pl_run_validation_parameters_fileName": {
+			"value": "@triggerBody().fileName"
+		},
+		"tr_storage_properties_typeProperties_scope": {
+			"value": "/subscriptions/a99520ae-ae45-4be4-9629-98fe3f487fc0/resourceGroups/azurelib-rg/providers/Microsoft.Storage/storageAccounts/azurelibdl"
+		}
+	}
+}
