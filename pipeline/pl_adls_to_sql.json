@@ -36,7 +36,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_adls_staging_customer",
+						"referenceName": "ds_adls_staging",
 						"type": "DatasetReference"
 					}
 				],
