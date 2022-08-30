@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "azurelib-apm-adf"
 		},
+		"ls_databricks_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0830-055009-xp6zyrc0"
+		},
 		"ls_keyvault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kv-gm-azurelib.vault.azure.net/"
@@ -73,19 +77,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ls_keyvault')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('ls_keyvault_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/ls_databricks')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -102,19 +93,25 @@
 						},
 						"secretName": "databricksaccessid"
 					},
-					"newClusterNodeType": "Standard_F4",
-					"newClusterNumOfWorker": "1",
-					"newClusterSparkEnvVars": {
-						"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
-					},
-					"newClusterVersion": "10.4.x-scala2.12",
-					"newClusterInitScripts": [],
-					"clusterOption": "Fixed"
+					"existingClusterId": "[parameters('ls_databricks_properties_typeProperties_existingClusterId')]"
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_keyvault')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_keyvault')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('ls_keyvault_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/tr_storage')]",

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "azurelib-apm-adf"
 		},
+		"ls_databricks_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0830-055009-xp6zyrc0"
+		},
 		"ls_keyvault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kv-gm-azurelib.vault.azure.net/"
@@ -48,6 +52,9 @@
 					},
 					"ls_keyvault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('ls_keyvault_properties_typeProperties_baseUrl')]"
+					},
+					"ls_databricks_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('ls_databricks_properties_typeProperties_existingClusterId')]"
 					},
 					"tr_storage_properties_pl_run_validation_parameters_fileName": {
 						"value": "[parameters('tr_storage_properties_pl_run_validation_parameters_fileName')]"

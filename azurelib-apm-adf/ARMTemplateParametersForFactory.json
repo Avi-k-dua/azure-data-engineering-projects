@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "azurelib-apm-adf"
 		},
+		"ls_databricks_properties_typeProperties_existingClusterId": {
+			"value": "0830-055009-xp6zyrc0"
+		},
 		"ls_keyvault_properties_typeProperties_baseUrl": {
 			"value": "https://kv-gm-azurelib.vault.azure.net/"
 		},
