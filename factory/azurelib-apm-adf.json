@@ -1,0 +1,9 @@
+{
+	"name": "azurelib-apm-adf",
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3bde76ed-26ac-4f53-889a-b81570cea8f7",
+		"tenantId": "707c861d-6374-4af3-b74e-404192474f68"
+	}
+}
