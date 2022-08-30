@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "azurelib-gm-adf"
+		},
+		"ls_adls_azurelibdl_accountKey": {
+			"value": ""
+		},
+		"ls_sql_azurelib_connectionString": {
+			"value": ""
+		},
+		"ls_adls_azurelibdl_properties_typeProperties_url": {
+			"value": "https://azurelibdl.dfs.core.windows.net/"
+		},
+		"ls_amazonS3_properties_typeProperties_accessKeyId": {
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "s3accessid"
+			}
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://kv-gm-azurelib.vault.azure.net/"
+		},
+		"tr_adls_staging_properties_typeProperties_scope": {
+			"value": "/subscriptions/a99520ae-ae45-4be4-9629-98fe3f487fc0/resourceGroups/azurelib-rg/providers/Microsoft.Storage/storageAccounts/azurelibdl"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
